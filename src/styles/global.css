@@ -346,15 +346,32 @@ h3 {
 .certificate-card {
   display: grid;
   gap: 10px;
-  min-height: 180px;
+  min-height: 300px;
   padding: 24px;
   text-decoration: none;
 }
 
-.certificate-preview {
-  aspect-ratio: 16 / 10;
+.certificate-preview-wrap {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(124, 52, 28, 0.12);
   border-radius: 10px;
-  object-fit: cover;
+  background: #fff;
+}
+
+.certificate-preview {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+.certificate-pdf {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
 }
 
 .certificate-badge {
@@ -377,6 +394,17 @@ h3 {
 .certificate-card small {
   align-self: end;
   color: var(--muted);
+}
+
+.certificate-link {
+  align-self: end;
+  color: var(--accent-deep);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.certificate-link:hover {
+  text-decoration: underline;
 }
 
 .about {

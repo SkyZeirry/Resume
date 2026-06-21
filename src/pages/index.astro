@@ -6,28 +6,26 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   : `${import.meta.env.BASE_URL}/`;
 const asset = (path) => `${baseUrl}${path.replace(/^\/+/, '')}`;
 
-const siteUrl = 'https://SkyZeirry.github.io/Resume/';
-
 const featuredWorks = [
   {
     title: '竹林阮乐快闪',
     category: 'Motion / Visual Design',
     image: asset('images/竹林阮乐快闪2.png'),
-    description: '结合传统器乐意象与快闪视觉节奏，展示场景搭建、画面调度和成片包装能力。',
-    tools: 'Blender / After Effects / Photoshop',
+    description: '围绕传统音乐与东方意象进行视觉设计，呈现节奏、场景和画面包装能力。',
+    tools: 'After Effects / Photoshop / Blender',
   },
   {
     title: '场景设计',
     category: 'Environment Design',
     image: asset('images/场景设计.png'),
-    description: '用于展示空间设计、场景构图、材质搭配和整体氛围控制。',
+    description: '展示空间构成、场景氛围、画面层次和视觉叙事能力。',
     tools: 'Blender / Photoshop',
   },
   {
     title: '日落色渲染练习',
     category: 'Lighting / Rendering',
     image: asset('images/调了八百遍终于调出来的日落色4.png'),
-    description: '重点呈现色彩调校、光影层次和最终画面情绪。',
+    description: '重点呈现光影控制、色彩调校和最终画面的情绪表达。',
     tools: 'Blender / Color Grading',
   },
 ];
@@ -47,17 +45,17 @@ const videos = [
   {
     title: '皮影主题视频',
     file: asset('videos/piying.mp4'),
-    poster: asset('images/竹林阮乐快闪2.png'),
+    poster: asset('videos/皮影视频封面.png'),
   },
   {
-    title: 'KRT 作品视频',
-    file: asset('videos/KRT(1).mp4'),
-    poster: asset('images/场景设计.png'),
+    title: '廓如闻古音',
+    file: asset('videos/廓如闻古音.mp4'),
+    poster: asset('videos/廓如闻古音封面.png'),
   },
   {
-    title: '6月21日作品视频',
-    file: asset('videos/6月21日 (1)(1).mp4'),
-    poster: asset('images/调了八百遍终于调出来的日落色4.png'),
+    title: '木语廊桥',
+    file: asset('videos/木语廊桥.mp4'),
+    poster: asset('videos/木语廊桥封面.png'),
   },
 ];
 
@@ -66,40 +64,37 @@ const certificates = [
     title: '大学英语六级成绩单',
     issuer: 'CET6',
     file: asset('certificates/CET6_202512_110590252202029_1.pdf'),
-    type: 'PDF',
+    preview: asset('certificates/previews/CET6_202512_110590252202029_1.png'),
+    previewType: 'image',
   },
   {
     title: '翻译证书',
     issuer: '能力证明',
     file: asset('certificates/translate_C0014_245020102.pdf'),
-    type: 'PDF',
+    preview: asset('certificates/previews/translate_C0014_245020102.png'),
+    previewType: 'image',
   },
   {
     title: '三等奖证书',
     issuer: '荣誉奖项',
     file: asset('certificates/三等奖.png'),
-    image: asset('certificates/三等奖.png'),
-    type: 'IMAGE',
+    preview: asset('certificates/三等奖.png'),
+    previewType: 'image',
   },
   {
     title: '北京印刷学院证书',
     issuer: '北京印刷学院',
     file: asset('certificates/北京印刷学院-2026054074.pdf'),
-    type: 'PDF',
+    preview: asset('certificates/previews/北京印刷学院-2026054074.png'),
+    previewType: 'image',
   },
   {
     title: '北京印刷学院证书',
     issuer: '北京印刷学院',
     file: asset('certificates/北京印刷学院-2026058540(1).pdf'),
-    type: 'PDF',
+    preview: asset('certificates/previews/北京印刷学院-2026058540(1).png'),
+    previewType: 'image',
   },
-];
-
-const workflow = [
-  '前期调研与视觉定位',
-  '模型、场景与镜头搭建',
-  '材质灯光与渲染输出',
-  '后期包装与作品整理',
 ];
 ---
 
@@ -112,7 +107,8 @@ const workflow = [
       name="description"
       content="高紫凌个人作品展示网站，包含视频作品、图片作品、证书展示、作者介绍与项目说明。"
     />
-    <link rel="icon" type="image/png" href={asset('favicon.png')} />
+    <link rel="icon" type="image/png" sizes="64x64" href={asset('favicon.png?v=4')} />
+    <link rel="shortcut icon" type="image/png" href={asset('favicon.png?v=4')} />
     <title>高紫凌 | 个人作品展示站</title>
   </head>
   <body>
@@ -130,10 +126,10 @@ const workflow = [
     <main id="top">
       <section class="hero section-band">
         <div class="hero-copy">
-          <p class="eyebrow">Portfolio Website</p>
+          <p class="eyebrow">Portfolio</p>
           <h1>高紫凌个人作品展示</h1>
           <p class="hero-text">
-            用于集中展示视觉设计、建模渲染、视频作品、证书材料和个人介绍。页面已经接入真实素材目录，可直接通过 GitHub Pages 分享给他人访问。
+            我关注视觉设计、视频表达与数字内容创作，擅长把传统文化元素、空间氛围和动态节奏转化为完整的视觉作品。这里集中展示我的视频项目、图片作品、证书材料和阶段性创作成果。
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#works">查看作品</a>
@@ -151,12 +147,12 @@ const workflow = [
           <span>构图、色彩、版式与作品包装</span>
         </div>
         <div>
-          <strong>视频展示</strong>
-          <span>短片、快闪、过程演示与成片播放</span>
+          <strong>视频创作</strong>
+          <span>短片、快闪、镜头节奏与成片表达</span>
         </div>
         <div>
-          <strong>材料证明</strong>
-          <span>证书、奖项、成绩单与相关 PDF</span>
+          <strong>数字内容</strong>
+          <span>场景、渲染、动态视觉与展示整理</span>
         </div>
       </section>
 
@@ -164,7 +160,7 @@ const workflow = [
         <div class="section-heading">
           <p class="eyebrow">Selected Works</p>
           <h2>作品展示</h2>
-          <p>精选部分代表作品作为首页项目卡片，点击后续可以扩展为独立详情页。</p>
+          <p>精选部分代表作品，展示我的视觉方向、画面处理和项目完成能力。</p>
         </div>
         <div class="work-grid">
           {featuredWorks.map((work) => (
@@ -185,7 +181,7 @@ const workflow = [
         <div class="section-heading">
           <p class="eyebrow">Image Gallery</p>
           <h2>图片作品</h2>
-          <p>这里展示 public/images 目录中的真实图片素材。</p>
+          <p>图片区域用于展示视觉成图、场景设计、过程图和作品细节。</p>
         </div>
         <div class="gallery-grid">
           {galleryImages.map((image, index) => (
@@ -198,7 +194,7 @@ const workflow = [
         <div class="section-heading">
           <p class="eyebrow">Showreel</p>
           <h2>视频播放</h2>
-          <p>视频文件来自 public/videos 目录，使用浏览器原生播放器播放。</p>
+          <p>视频封面使用视频目录中对应的截图文件，点击即可播放完整视频。</p>
         </div>
         <div class="video-grid">
           {videos.map((video) => (
@@ -213,41 +209,24 @@ const workflow = [
         </div>
       </section>
 
-      <section class="section process-section">
-        <div class="section-heading">
-          <p class="eyebrow">Workflow</p>
-          <h2>作品介绍与制作流程</h2>
-          <p>通过简短的流程说明，让访问者快速理解作品从概念到成片的制作方式。</p>
-        </div>
-        <div class="process-grid">
-          {workflow.map((step, index) => (
-            <article class="process-card">
-              <span>0{index + 1}</span>
-              <h3>{step}</h3>
-              <p>可补充该阶段使用的软件、技术难点、解决方案和最终输出成果。</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section class="section" id="certificates">
         <div class="section-heading">
           <p class="eyebrow">Certificates</p>
           <h2>证书展示</h2>
-          <p>证书和 PDF 文件来自 public/certificates 目录，点击卡片可打开原文件。</p>
+          <p>证书区域展示我的语言能力、学习经历和相关荣誉，点击可打开原始文件。</p>
         </div>
         <div class="certificate-grid">
           {certificates.map((certificate) => (
-            <a class="certificate-card" href={certificate.file} target="_blank" rel="noreferrer">
-              {certificate.image ? (
-                <img class="certificate-preview" src={certificate.image} alt={`${certificate.title}预览`} />
-              ) : (
-                <span class="certificate-badge">{certificate.type}</span>
-              )}
+            <article class="certificate-card">
+              <div class="certificate-preview-wrap">
+                <img class="certificate-preview" src={certificate.preview} alt={`${certificate.title}预览`} />
+              </div>
               <span>{certificate.title}</span>
               <strong>{certificate.issuer}</strong>
-              <small>点击查看文件</small>
-            </a>
+              <a class="certificate-link" href={certificate.file} target="_blank" rel="noreferrer">
+                打开原文件
+              </a>
+            </article>
           ))}
         </div>
       </section>
@@ -260,12 +239,11 @@ const workflow = [
           <p class="eyebrow">About</p>
           <h2>作者介绍</h2>
           <p>
-            这里可以填写学习背景、创作方向、软件能力、项目经历和当前目标。建议突出最能代表个人能力的内容，例如视觉设计、建模渲染、视频制作或作品包装。
+            我是高紫凌，作品方向集中在视觉设计、视频创作和数字内容表达。我的项目通常从主题概念出发，结合图像、影像、色彩和节奏，完成面向展示、传播或作品集呈现的视觉内容。
           </p>
           <p>
-            可补充常用工具：Blender、Photoshop、After Effects、Premiere、Substance Painter 等，并说明你在项目中的核心职责。
+            我希望通过这些作品展示自己的审美判断、执行能力和持续创作能力，也希望让访问者能直接看到我的视频、图片作品和相关证明材料。
           </p>
-          <p class="share-url">公开访问地址：<a href={siteUrl}>{siteUrl}</a></p>
         </div>
       </section>
     </main>
