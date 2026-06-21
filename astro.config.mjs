@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://your-github-username.github.io',
-  base: '/my_portfolio',
+  site: 'https://SkyZeirry.github.io',
+  base: '/Resume',
 });
