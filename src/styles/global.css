@@ -187,6 +187,7 @@ h3 {
 .hero-media,
 .portrait,
 .video-frame,
+.video-card,
 .work-card,
 .process-card,
 .share-card,
@@ -303,11 +304,7 @@ h3 {
   font-weight: 700;
 }
 
-.split {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.75fr) minmax(320px, 1.25fr);
-  gap: clamp(28px, 5vw, 64px);
-  align-items: center;
+.video-section {
   background:
     linear-gradient(135deg, rgba(47, 109, 103, 0.12), rgba(183, 81, 45, 0.08)),
     rgba(255, 250, 244, 0.72);
@@ -315,15 +312,27 @@ h3 {
   border-bottom: 1px solid rgba(124, 52, 28, 0.12);
 }
 
-.video-frame {
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.video-card {
   padding: 10px;
   background: #15191f;
 }
 
-.video-frame video {
+.video-card video {
   aspect-ratio: 16 / 9;
   border-radius: 10px;
   background: #0e1217;
+}
+
+.video-card h3 {
+  margin: 14px 6px 6px;
+  color: #fff;
+  font-size: 18px;
 }
 
 .process-card {
@@ -340,6 +349,21 @@ h3 {
   min-height: 180px;
   padding: 24px;
   text-decoration: none;
+}
+
+.certificate-preview {
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.certificate-badge {
+  display: inline-grid;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--surface-strong);
 }
 
 .certificate-card span {
@@ -373,6 +397,11 @@ h3 {
     var(--surface);
 }
 
+.share-url a {
+  color: var(--accent-deep);
+  font-weight: 800;
+}
+
 code {
   display: inline-block;
   padding: 3px 8px;
@@ -385,6 +414,7 @@ code {
   .work-grid,
   .certificate-grid,
   .gallery-grid,
+  .video-grid,
   .process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -402,11 +432,11 @@ code {
   }
 
   .hero,
-  .split,
   .about,
   .work-grid,
   .certificate-grid,
   .gallery-grid,
+  .video-grid,
   .process-grid,
   .intro-strip {
     grid-template-columns: 1fr;
