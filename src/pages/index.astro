@@ -1,0 +1,255 @@
+---
+import '../styles/global.css';
+
+const siteUrl = 'https://your-github-username.github.io/my_portfolio/';
+
+const featuredWorks = [
+  {
+    title: '角色建模项目',
+    category: 'Character Modeling',
+    image: '/images/work-character.jpg',
+    description:
+      '展示角色建模流程、拓扑控制、材质贴图与最终打光效果，适合放代表性角色作品。',
+    tools: 'Blender / ZBrush / Substance Painter',
+  },
+  {
+    title: '场景渲染项目',
+    category: 'Environment Render',
+    image: '/images/work-scene.jpg',
+    description:
+      '用于展示室内、建筑或大型场景的建模与镜头设计，并补充氛围灯光与后期说明。',
+    tools: 'Blender / Photoshop / After Effects',
+  },
+  {
+    title: '产品视觉项目',
+    category: 'Product Visual',
+    image: '/images/work-product.jpg',
+    description:
+      '适合陈列商业产品、广告静帧或动画短片，突出材质细节、布光和品牌表达。',
+    tools: 'Cinema 4D / Redshift / Photoshop',
+  },
+];
+
+const projectHighlights = [
+  {
+    title: '建模能力',
+    text: '角色、道具、产品、场景建模均可展示，支持高模和规范化低模作品整理。',
+  },
+  {
+    title: '视频展示',
+    text: '可直接播放 MP4 作品集视频，适合放 showreel、镜头合集或项目讲解片段。',
+  },
+  {
+    title: '证书与荣誉',
+    text: '将证书图片或 PDF 放在 public 目录即可展示并允许访客点击查看原件。',
+  },
+];
+
+const certificates = [
+  {
+    title: '专业技能证书',
+    issuer: '发证机构 / 2026',
+    file: '/certificates/certificate-01.jpg',
+  },
+  {
+    title: '课程结业证书',
+    issuer: '发证机构 / 2025',
+    file: '/certificates/certificate-02.jpg',
+  },
+  {
+    title: '比赛或荣誉证明',
+    issuer: '主办单位 / 2024',
+    file: '/certificates/certificate-03.jpg',
+  },
+];
+
+const workflow = [
+  '前期调研与风格分析',
+  '模型搭建与结构优化',
+  '材质、灯光与渲染输出',
+  '后期整理与作品包装',
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="个人作品展示网站，包含视频播放、证书展示、作者介绍、作品介绍与图片内容，适合公开分享。"
+    />
+    <title>高紫凌 | 个人作品展示站</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">高紫凌</a>
+      <nav aria-label="主导航">
+        <a href="#works">作品</a>
+        <a href="#showreel">视频</a>
+        <a href="#certificates">证书</a>
+        <a href="#about">关于作者</a>
+        <a href="#share">分享</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-band">
+        <div class="hero-copy">
+          <p class="eyebrow">Portfolio Website</p>
+          <h1>建模、渲染与作品叙事集中展示</h1>
+          <p class="hero-text">
+            这是一个面向个人作品展示的 Astro 静态网站模板，已经包含图片陈列、视频播放、证书展示、作者文字介绍和项目说明区域，后续只需要替换素材即可直接用于投递、分享或展示。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#works">查看作品</a>
+            <a class="button secondary" href="#share">部署并分享</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-label="首页代表作品图">
+          <img src="/images/hero-work.jpg" alt="代表建模渲染作品预览" />
+        </div>
+      </section>
+
+      <section class="intro-strip" aria-label="网站功能概览">
+        {projectHighlights.map((item) => (
+          <div>
+            <strong>{item.title}</strong>
+            <span>{item.text}</span>
+          </div>
+        ))}
+      </section>
+
+      <section class="section" id="works">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Works</p>
+          <h2>作品展示</h2>
+          <p>
+            当前已经配置为三张封面卡片，你可以继续增加项目卡片，或后续扩展为单独详情页。每个项目包含封面图、方向分类、简介和工具栈说明。
+          </p>
+        </div>
+        <div class="work-grid">
+          {featuredWorks.map((work) => (
+            <article class="work-card">
+              <img src={work.image} alt={`${work.title}预览图`} />
+              <div class="work-card-body">
+                <span>{work.category}</span>
+                <h3>{work.title}</h3>
+                <p>{work.description}</p>
+                <small>{work.tools}</small>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section gallery-section">
+        <div class="section-heading">
+          <p class="eyebrow">Image Gallery</p>
+          <h2>图片插入展示</h2>
+          <p>
+            图片可直接放在 <code>public/images/</code> 下，通过普通 <code>img</code>
+            标签引用。这个区域适合拼贴过程图、线框图、材质细节或最终海报。
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <img src="/images/gallery-01.jpg" alt="作品过程图一" />
+          <img src="/images/gallery-02.jpg" alt="作品过程图二" />
+          <img src="/images/gallery-03.jpg" alt="作品过程图三" />
+          <img src="/images/gallery-04.jpg" alt="作品过程图四" />
+        </div>
+      </section>
+
+      <section class="section split" id="showreel">
+        <div class="section-heading compact">
+          <p class="eyebrow">Showreel</p>
+          <h2>视频播放</h2>
+          <p>
+            按照 Astro 官方静态资源方式，视频文件放入 <code>public/videos/showreel.mp4</code>
+            后即可被直接访问和播放。现在页面结构已就位，只需替换成你的真实视频。
+          </p>
+        </div>
+        <div class="video-frame">
+          <video controls preload="metadata" poster="/images/video-poster.jpg">
+            <source src="/videos/showreel.mp4" type="video/mp4" />
+            当前浏览器不支持视频播放。
+          </video>
+        </div>
+      </section>
+
+      <section class="section process-section">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow</p>
+          <h2>作品介绍与制作流程</h2>
+          <p>
+            除了展示成片，还建议写出制作过程。这样访问者更容易理解你的方法论，而不是只看到最终结果。
+          </p>
+        </div>
+        <div class="process-grid">
+          {workflow.map((step, index) => (
+            <article class="process-card">
+              <span>0{index + 1}</span>
+              <h3>{step}</h3>
+              <p>这里可以补充该阶段使用的软件、技术难点、解决方案和最终输出成果。</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section" id="certificates">
+        <div class="section-heading">
+          <p class="eyebrow">Certificates</p>
+          <h2>证书展示</h2>
+          <p>
+            证书文件目前使用占位图路径。你后续可以把 JPG、PNG 或 PDF 放入
+            <code>public/certificates/</code>，访客点击后即可打开查看。
+          </p>
+        </div>
+        <div class="certificate-grid">
+          {certificates.map((certificate) => (
+            <a class="certificate-card" href={certificate.file} target="_blank" rel="noreferrer">
+              <span>{certificate.title}</span>
+              <strong>{certificate.issuer}</strong>
+              <small>点击查看文件</small>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="portrait">
+          <img src="/images/portrait.jpg" alt="作者头像或个人照片" />
+        </div>
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>作者文字介绍</h2>
+          <p>
+            这里建议写你的学习背景、创作方向、软件能力、项目经验和当前目标。例如你擅长角色建模、材质灯光或产品视觉，想面向校招、实习或自由接单展示作品。
+          </p>
+          <p>
+            如果你有明确定位，也可以补充常用软件，例如 Blender、Maya、ZBrush、Substance Painter、Photoshop、After Effects，并写清楚你最强的工作环节。
+          </p>
+        </div>
+      </section>
+
+      <section class="section share-section" id="share">
+        <div class="section-heading">
+          <p class="eyebrow">Sharing</p>
+          <h2>分享给他人</h2>
+          <p>
+            这个站点已经适合构建成静态页面并发布。最简单的公开方式是上传到 GitHub 仓库后，用 GitHub Pages 自动部署，部署完成后别人可以直接通过链接访问。
+          </p>
+        </div>
+        <div class="share-card">
+          <p><strong>计划部署地址</strong></p>
+          <code>{siteUrl}</code>
+          <p>
+            部署前请把上方地址中的 GitHub 用户名改成你的实际用户名。如果仓库名不是
+            <code>my_portfolio</code>，也要同步修改。
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
