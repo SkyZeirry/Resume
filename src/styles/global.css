@@ -201,7 +201,7 @@ h3 {
 }
 
 .hero-media {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1920 / 1080;
 }
 
 .hero-media img,
@@ -271,11 +271,11 @@ h3 {
 }
 
 .gallery-grid img {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1920 / 1080;
 }
 
 .work-card img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1920 / 1080;
 }
 
 .work-card-body,
@@ -324,7 +324,7 @@ h3 {
 }
 
 .video-card video {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1920 / 1080;
   border-radius: 10px;
   background: #0e1217;
 }
@@ -415,7 +415,7 @@ h3 {
 }
 
 .portrait {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1920 / 1080;
 }
 
 .share-card {
@@ -475,7 +475,7 @@ code {
   }
 
   .hero-media {
-    aspect-ratio: 16 / 11;
+    aspect-ratio: 1920 / 1080;
   }
 
   .section-heading.compact {
