@@ -1,0 +1,8 @@
+node_modules/
+.astro/
+dist/
+media-source/
+.codex-preview*.log
+.codex-edge*/
+.codex-*.png
+scripts/__pycache__/

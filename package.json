@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "optimize:media": "python scripts/optimize_media.py"
   },
   "keywords": [],
   "author": "",
