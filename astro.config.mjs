@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
-const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 export default defineConfig({
   site: 'https://skyzeirry.github.io',
-  base: isGitHubPages ? '/Resume/' : '/',
+  base: isDevelopment ? '/' : '/Resume/',
 });
