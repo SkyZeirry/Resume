@@ -15,30 +15,28 @@ const featuredWorks = [
     tools: 'After Effects / Photoshop / Blender',
   },
   {
-    title: '场景设计',
+    title: '油纸伞快闪场景设计',
     category: 'Environment Design',
-    image: asset('images/场景设计.png'),
+    image: asset('images/油纸伞快闪场景设计.png'),
     description: '展示空间构成、场景氛围、画面层次和视觉叙事能力。',
     tools: 'Blender / Photoshop',
   },
   {
     title: '日落色渲染练习',
     category: 'Lighting / Rendering',
-    image: asset('images/调了八百遍终于调出来的日落色4.png'),
+    image: asset('images/日落色4.png'),
     description: '重点呈现光影控制、色彩调校和最终画面的情绪表达。',
     tools: 'Blender / Color Grading',
   },
 ];
 
 const galleryImages = [
-  'images/Untitled.png',
-  'images/e7dec547e5a02c3ca60bdbcfb0653fe9.png',
-  'images/cf16f480f8770ef778718088086963d9.jpg',
-  'images/cdee135e7d584dd17c2359c6de4e9745.png',
-  'images/bd53d763ad26cef4f89a128bc8e79267.png',
-  'images/ac62760a4caee35801273985d16959c6.png',
-  'images/3686325fbfcf5ea9534fb0eac58376b5.png',
-  'images/0fb5c97d011109fb39d26551ee228a95.png',
+  'images/全景廊桥.png',
+  'images/廓如亭.png',
+  'images/廓如亭开始界面.png',
+  'images/廓如亭游戏内.png',
+  'images/廓如亭游戏内1.png',
+  'images/廓如亭游戏道具.png',
 ];
 
 const videos = [
@@ -57,38 +55,52 @@ const videos = [
     file: asset('videos/木语廊桥.mp4'),
     poster: asset('videos/木语廊桥封面.png'),
   },
+];
+
+const aigcImages = [
+  {
+    title: 'AI 辅助建模',
+    category: '3D Modeling',
+    image: asset('AIGC/model/ai建模.png'),
+  },
+  {
+    title: '人物概念设计',
+    category: 'Character Design',
+    image: asset('AIGC/model/人物.png'),
+  },
+  {
+    title: '场景渲染 I',
+    category: 'Environment Rendering',
+    image: asset('AIGC/model/场景渲染3.png'),
+  },
+  {
+    title: '场景渲染 II',
+    category: 'Environment Rendering',
+    image: asset('AIGC/model/场景渲染4.png'),
+  },
+];
+
+const aigcVideos = [
   {
     title: '幻想光碟',
-    file: asset('videos/幻想光碟.mp4'),
-    poster: asset('videos/幻想光碟封面.png'),
+    category: 'AI Visual Film',
+    file: asset('AIGC/video/幻想光碟.mp4'),
+    poster: asset('AIGC/video/幻想光碟封面.png'),
   },
   {
     title: '离骚',
-    file: asset('videos/离骚.mp4'),
-    poster: asset('videos/离骚封面.png'),
+    category: 'AI Visual Film',
+    file: asset('AIGC/video/离骚.mp4'),
+    poster: asset('AIGC/video/离骚封面.png'),
   },
 ];
 
 const certificates = [
   {
-    title: '大学英语六级成绩单',
-    issuer: 'CET6',
-    file: asset('certificates/CET6_202512_110590252202029_1.pdf'),
-    preview: asset('certificates/previews/CET6_202512_110590252202029_1.png'),
-    previewType: 'image',
-  },
-  {
-    title: '翻译证书',
-    issuer: '能力证明',
-    file: asset('certificates/translate_C0014_245020102.pdf'),
-    preview: asset('certificates/previews/translate_C0014_245020102.png'),
-    previewType: 'image',
-  },
-  {
-    title: '三等奖证书',
-    issuer: '荣誉奖项',
-    file: asset('certificates/三等奖.png'),
-    preview: asset('certificates/三等奖.png'),
+    title: '北京印刷学院证书',
+    issuer: '北京印刷学院',
+    file: asset('certificates/北京印刷学院-2026058540(1).pdf'),
+    preview: asset('certificates/previews/北京印刷学院-2026058540(1).png'),
     previewType: 'image',
   },
   {
@@ -99,10 +111,24 @@ const certificates = [
     previewType: 'image',
   },
   {
-    title: '北京印刷学院证书',
-    issuer: '北京印刷学院',
-    file: asset('certificates/北京印刷学院-2026058540(1).pdf'),
-    preview: asset('certificates/previews/北京印刷学院-2026058540(1).png'),
+    title: '三等奖证书',
+    issuer: '荣誉奖项',
+    file: asset('certificates/三等奖.png'),
+    preview: asset('certificates/三等奖.png'),
+    previewType: 'image',
+  },
+  {
+    title: '翻译证书',
+    issuer: '能力证明',
+    file: asset('certificates/translate_C0014_245020102.pdf'),
+    preview: asset('certificates/previews/translate_C0014_245020102.png'),
+    previewType: 'image',
+  },
+  {
+    title: '大学英语六级成绩单',
+    issuer: 'CET6',
+    file: asset('certificates/CET6_202512_110590252202029_1.pdf'),
+    preview: asset('certificates/previews/CET6_202512_110590252202029_1.png'),
     previewType: 'image',
   },
 ];
@@ -128,6 +154,7 @@ const certificates = [
         <a href="#works">作品</a>
         <a href="#gallery">图片</a>
         <a href="#showreel">视频</a>
+        <a href="#aigc">AIGC</a>
         <a href="#certificates">证书</a>
         <a href="#about">关于</a>
       </nav>
@@ -147,7 +174,7 @@ const certificates = [
           </div>
         </div>
         <div class="hero-media" aria-label="首页代表作品图">
-          <img src={asset('images/调了八百遍终于调出来的日落色4.png')} alt="代表作品预览" />
+          <img src={asset('images/日落色4.png')} alt="日落色渲染作品预览" />
         </div>
       </section>
 
@@ -219,6 +246,45 @@ const certificates = [
         </div>
       </section>
 
+      <section class="section aigc-section" id="aigc">
+        <div class="aigc-heading">
+          <div class="section-heading compact">
+            <p class="eyebrow">AIGC Exploration</p>
+            <h2>AIGC 创作</h2>
+          </div>
+          <p>
+            将生成式图像、概念设计与三维流程结合，用于探索人物、空间和动态影像的视觉方向。
+          </p>
+        </div>
+
+        <div class="aigc-image-grid">
+          {aigcImages.map((work) => (
+            <figure class="aigc-image-card">
+              <img src={work.image} alt={`${work.title}作品预览`} loading="lazy" />
+              <figcaption>
+                <span>{work.category}</span>
+                <strong>{work.title}</strong>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div class="aigc-video-grid">
+          {aigcVideos.map((video) => (
+            <article class="aigc-video-card">
+              <video controls preload="metadata" poster={video.poster}>
+                <source src={video.file} type="video/mp4" />
+                当前浏览器不支持视频播放。
+              </video>
+              <div>
+                <span>{video.category}</span>
+                <h3>{video.title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section class="section" id="certificates">
         <div class="section-heading">
           <p class="eyebrow">Certificates</p>
@@ -243,7 +309,7 @@ const certificates = [
 
       <section class="section about" id="about">
         <div class="portrait">
-          <img src={asset('images/cf16f480f8770ef778718088086963d9.jpg')} alt="作者头像或个人照片" />
+          <img src={asset('AIGC/model/人物.png')} alt="人物设计作品" />
         </div>
         <div>
           <p class="eyebrow">About</p>
